@@ -7,7 +7,7 @@ def open_csv():
 
     with open("phonebook_raw.csv") as f:
         rows = csv.reader(f, delimiter=",")
-    contacts_list = list(rows)
+        contacts_list = list(rows)
     return contacts_list
 
 
@@ -54,13 +54,13 @@ def join_duplicates(contacts_list):
             if i[0] == j[0] and i[1] == j[1] and i is not j:
                 if i[2] == '':
                     i[2] = j[2]
-                elif i[3] == '':
+                if i[3] == '':
                     i[3] = j[3]
-                elif i[4] == '':
+                if i[4] == '':
                     i[4] = j[4]
-                elif i[5] == '':
+                if i[5] == '':
                     i[5] = j[5]
-                elif i[6] == '':
+                if i[6] == '':
                     i[6] = j[6]
 
     for card in contacts_list:
